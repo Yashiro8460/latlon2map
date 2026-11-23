@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# SPDX-FileCopyrightText: 2026 
+# SPDX-FileCopyrightText: 2026 Takumi Yashiro
 # SPDX-License-Identifier: BSD-3-Clause
 
 import sys
@@ -8,4 +8,3 @@ for line in sys.stdin:
     lat = float(parts[0])
     lon = float(parts[1])
     print(f"https://www.google.com/maps?q={lat},{lon}")
-    
