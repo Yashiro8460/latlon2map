@@ -13,6 +13,15 @@ out=$(echo 35.6812 139.7671 | ./latlon2map)
 [ "$?" = 0 ] || ng "$LINENO"
 [ "${out}" = "https://www.google.com/maps?q=35.6812,139.7671" ] || ng "$LINENO"
 
+out=$(echo -33.8688 -70.6693 | ./latlon2map)
+[ "$?" = 0 ] || ng "$LINENO"
+[ "${out}" = "https://www.google.com/maps?q=-33.8688,-70.6693" ] || ng "$LINENO"
+
+out=$(printf "35.6812 139.7671\n36.0835 140.0764\n" | ./latlon2map)
+[ "$?" = 0 ] || ng "$LINENO"
+expected=$(printf "https://www.google.com/maps?q=35.6812,139.7671\nhttps://www.google.com/maps?q=36.0835,140.0764")
+[ "${out}" = "${expected}" ] || ng "$LINENO"
+
 out=$(echo あ い| ./latlon2map)
 [ "$?" = 1 ]      || ng "$LINENO"
 [ "${out}" = "" ] || ng "$LINENO"
