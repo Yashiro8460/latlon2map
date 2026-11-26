@@ -21,4 +21,3 @@ for line in sys.stdin:
         sys.exit(1)
 
     print(f"https://www.google.com/maps?q={lat},{lon}")
-
