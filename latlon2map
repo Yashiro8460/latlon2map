@@ -7,14 +7,14 @@ import sys
 for line in sys.stdin:
     parts = line.split()
     if len(parts) != 2:
-        print("Error: enter latitude and lngitude", file=sys.stderr)
+        print("Error: enter latitude and longitude", file=sys.stderr)
         sys.exit(1)
 
     lat = float(parts[0])
     lon = float(parts[1])
 
     if lat < -90 or lat > 90:
-        print("Error: latitude must de between -90 and 90", file=sys.stderr)
+        print("Error: latitude must be between -90 and 90", file=sys.stderr)
         sys.exit(1)
     if lon < -180 or lon > 180:
         print("Error: longitude must be between -180 and 180", file=sys.stderr)
